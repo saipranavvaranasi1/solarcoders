@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enroll — $>SolarCoders<$</title>
+  <meta name="description" content="Enroll a young coder in $>SolarCoders<$'s free Python & AI programs. Small mentored crews for ages 8–14." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23080b12'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23f2b23d'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%236fb7c4' stroke-width='1.5'/%3E%3Ccircle cx='52' cy='32' r='3' fill='%23e7ecf4'/%3E%3C/svg%3E" />
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header id="masthead">
+    <div class="shell nav-shell">
+      <a href="index.html" class="brand" aria-label="$>SolarCoders<$ — home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.5"/>
+          <circle cx="20" cy="20" r="4.5" fill="var(--star)"/>
+          <circle cx="35" cy="20" r="2.4" fill="var(--cool)"/>
+        </svg>
+        <span class="brand-word">$>SolarCoders<$</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="programs.html">Programs</a>
+        <a href="about.html">About</a>
+        <a href="stories.html">Stories</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-ghost">Contact</a>
+      </div>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile" hidden>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="about.html">About</a>
+      <a href="stories.html">Stories</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="shell page-hero">
+      <p class="breadcrumb reveal"><a href="index.html">Home</a><span class="sep">/</span>Enroll</p>
+      <h1 class="page-title reveal">Join the next <em>orbit</em>.</h1>
+      <p class="page-lede reveal">Tell us a little about your young coder and we'll match them to the right crew. Enrollment is free, and no experience is needed — just curiosity.</p>
+    </div>
+
+    <div class="shell work-grid">
+      <!-- FORM -->
+      <section class="panel reveal" aria-labelledby="formHeading">
+        <form id="enrollForm" novalidate>
+          <div class="form-head">
+            <h2 id="formHeading">Enrollment application</h2>
+            <p>Fields marked <span style="color:var(--star)">*</span> are required. Takes about two minutes.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field full">
+              <label for="program">Which orbit? <span class="req">*</span></label>
+              <select id="program" name="program" required>
+                <option value="" disabled selected>Choose a program…</option>
+                <option>Orbit 01 — Python Basics (ages 8–11)</option>
+                <option>Orbit 02 — Build with Python (ages 11–14)</option>
+                <option>Orbit 03 — Python + AI (ages 12–14)</option>
+                <option>Not sure yet — help me choose</option>
+              </select>
+              <span class="err">Please choose a program.</span>
+            </div>
+
+            <div class="field">
+              <label for="student">Student's first name <span class="req">*</span></label>
+              <input id="student" name="student" type="text" autocomplete="off" placeholder="e.g. Riya" required />
+              <span class="err">Please enter the student's name.</span>
+            </div>
+
+            <div class="field">
+              <label for="age">Student's age <span class="req">*</span></label>
+              <select id="age" name="age" required>
+                <option value="" disabled selected>Select age…</option>
+                <option>8</option><option>9</option><option>10</option><option>11</option>
+                <option>12</option><option>13</option><option>14</option>
+              </select>
+              <span class="err">Please select an age.</span>
+            </div>
+
+            <div class="field">
+              <label for="parent">Parent / guardian name <span class="req">*</span></label>
+              <input id="parent" name="parent" type="text" autocomplete="name" placeholder="Your full name" required />
+              <span class="err">Please enter your name.</span>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              <span class="err">Please enter a valid email.</span>
+            </div>
+
+            <div class="field">
+              <label for="timezone">Time zone / city</label>
+              <input id="timezone" name="timezone" type="text" placeholder="e.g. Seattle, PT" />
+              <span class="err"></span>
+            </div>
+
+            <div class="field">
+              <label for="referral">How did you hear about us?</label>
+              <select id="referral" name="referral">
+                <option value="" disabled selected>Optional…</option>
+                <option>School or teacher</option>
+                <option>Public library</option>
+                <option>Friend or family</option>
+                <option>Social media</option>
+                <option>Other</option>
+              </select>
+              <span class="err"></span>
+            </div>
+
+            <div class="field full">
+              <label for="notes">Anything we should know?</label>
+              <textarea id="notes" name="notes" placeholder="Experience level, accommodations, questions — anything helps."></textarea>
+              <span class="err"></span>
+            </div>
+
+            <div class="field full">
+              <label class="consent">
+                <input id="consent" name="consent" type="checkbox" required />
+                <span class="box"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6.5 4.7 9 10 3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span>I'm the parent or guardian and consent to $>SolarCoders<$ contacting me about enrollment. <span class="req">*</span></span>
+              </label>
+              <span class="err" data-for="consent">Please confirm consent to continue.</span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-solid" data-magnetic>Send application</button>
+            <span class="form-note">We reply within 2–3 days.</span>
+          </div>
+        </form>
+
+        <!-- success -->
+        <div class="form-success" id="enrollSuccess" role="status" aria-live="polite">
+          <div class="success-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12.5 9 17.5 20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h2>Application ready for launch</h2>
+          <p>Your email app should have opened with everything filled in — just hit send. If it didn't, email us directly at <a href="mailto:hello@$>SolarCoders<$.org" style="color:var(--star)">hello@$>SolarCoders<$.org</a> and we'll take it from there.</p>
+          <a href="index.html" class="btn btn-ghost">Back to home<span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <!-- ASIDE -->
+      <aside class="aside">
+        <div class="aside-card reveal">
+          <h3>What happens next</h3>
+          <ol class="steps">
+            <li><div><strong>You apply</strong><span>Send this quick form — two minutes, tops.</span></div></li>
+            <li><div><strong>We reach out</strong><span>A mentor emails within 2–3 days to confirm the fit.</span></div></li>
+            <li><div><strong>Pick a crew time</strong><span>Choose a weekly slot that works for your family.</span></div></li>
+            <li><div><strong>Liftoff</strong><span>Your coder writes real Python in session one.</span></div></li>
+          </ol>
+        </div>
+        <div class="aside-card reveal">
+          <h3>Good to know</h3>
+          <ul class="assure">
+            <li>Always free — funded by donors and volunteers.</li>
+            <li>All you need is a computer and a browser.</li>
+            <li>Small crews, 1:6 mentor ratio.</li>
+            <li>Not sure which orbit? We'll help you choose.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="colophon">
+    <div class="shell foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.5"/>
+            <circle cx="20" cy="20" r="4.5" fill="var(--star)"/>
+            <circle cx="35" cy="20" r="2.4" fill="var(--cool)"/>
+          </svg>
+          <span class="brand-word">$>SolarCoders<$</span>
+        </a>
+        <p>A student-founded nonprofit teaching kids Python &amp; AI. Learning to code should be for everyone.</p>
+      </div>
+      <nav aria-label="Explore">
+        <h4>Explore</h4>
+        <a href="programs.html">Programs</a>
+        <a href="about.html">About</a>
+        <a href="stories.html">Stories</a>
+      </nav>
+      <nav aria-label="Get involved">
+        <h4>Get involved</h4>
+        <a href="enroll.html">Enroll a kid</a>
+        <a href="contact.html">Volunteer as mentor</a>
+        <a href="contact.html">Partner with us</a>
+      </nav>
+      <nav aria-label="Connect">
+        <h4>Connect</h4>
+        <a href="contact.html">Contact us</a>
+        <a href="mailto:hello@$>SolarCoders<$.org">hello@$>SolarCoders<$.org</a>
+      </nav>
+    </div>
+    <div class="shell foot-base">
+      <p>&copy; <span id="year">2026</span> $>SolarCoders<$ — a 501(c)(3) nonprofit initiative.</p>
+      <p>Built by young coders, for young coders.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$>SolarCoders<$ — Python &amp; AI for young minds</title>
+  <meta name="description" content="$>SolarCoders<$ is a student-founded nonprofit teaching elementary and middle schoolers to write real Python and build with AI — in small, mentored crews. Free, always." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23080b12'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23f2b23d'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%236fb7c4' stroke-width='1.5'/%3E%3Ccircle cx='52' cy='32' r='3' fill='%23e7ecf4'/%3E%3C/svg%3E" />
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- ============ HEADER ============ -->
+  <header id="masthead">
+    <div class="shell nav-shell">
+      <a href="index.html" class="brand" aria-label="$>SolarCoders<$ — home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.5"/>
+          <circle cx="20" cy="20" r="4.5" fill="var(--star)"/>
+          <circle cx="35" cy="20" r="2.4" fill="var(--cool)"/>
+        </svg>
+        <span class="brand-word">$>SolarCoders<$</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="programs.html">Programs</a>
+        <a href="about.html">About</a>
+        <a href="stories.html">Stories</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="enroll.html" class="btn btn-solid" data-magnetic>Enroll a coder</a>
+      </div>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile" hidden>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="about.html">About</a>
+      <a href="stories.html">Stories</a>
+      <a href="contact.html">Contact</a>
+      <a href="enroll.html" class="btn btn-solid">Enroll a coder</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tick"></span>Student-founded 501(c)(3) &middot; Est. 2025</p>
+          <h1 class="hero-title">Bring young minds into orbit around <em>Python&nbsp;&amp;&nbsp;AI</em>.</h1>
+          <p class="hero-lede">
+            A nonprofit that teaches elementary and middle schoolers to write real code — starting
+            with Python and reaching the libraries that power modern AI. Small crews, live mentors,
+            always free.
+          </p>
+          <div class="hero-cta">
+            <a href="enroll.html" class="btn btn-solid" data-magnetic>Enroll a young coder</a>
+            <a href="programs.html" class="btn btn-ghost">Explore the programs<span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+          <dl class="readout" aria-label="Program at a glance">
+            <div><dt>Coders launched</dt><dd>500<span>+</span></dd></div>
+            <div><dt>Projects shipped</dt><dd>40<span>+</span></dd></div>
+            <div><dt>Mentor ratio</dt><dd>1:6</dd></div>
+            <div><dt>Cost to join</dt><dd>Free</dd></div>
+          </dl>
+        </div>
+
+        <!-- 3D solar system: $>SolarCoders<$ at the core, the stack in orbit -->
+        <div class="hero-orbit">
+          <div class="solar" id="solar" aria-hidden="true">
+            <div class="solar-star" title="$>SolarCoders<$"></div>
+
+            <div class="planet" data-speed="0.30" data-phase="0.5" data-dir="1">
+              <span class="planet-face">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="#3776AB" d="M15.9 4c-3 0-5 1.2-5 3.6v2.7h5.2v.9H8.6C6 11.2 4.6 12.8 4.6 16s1.3 4.9 3.9 4.9h2v-3c0-2.5 2.1-4.5 4.6-4.5h5.1c2 0 3.6-1.6 3.6-3.6V7.6C23.4 5.4 21.4 4 15.9 4zm-2.8 2.2c.6 0 1 .5 1 1.1s-.4 1-1 1-1-.5-1-1 .4-1.1 1-1.1z"/>
+                  <path fill="#FFD43B" d="M16.1 28c3 0 5-1.2 5-3.6v-2.7h-5.2v-.9h7.5c2.6 0 4-1.6 4-4.9s-1.3-4.9-3.9-4.9h-2v3c0 2.5-2.1 4.5-4.6 4.5H10.9c-2 0-3.6 1.6-3.6 3.6v3.8C8.6 26.6 10.6 28 16.1 28zm2.8-2.2c-.6 0-1-.5-1-1.1s.4-1 1-1 1 .5 1 1-.4 1.1-1 1.1z"/>
+                </svg>
+              </span>
+              <span class="planet-name">Python</span>
+            </div>
+
+            <div class="planet" data-speed="0.24" data-phase="2.3" data-dir="-1">
+              <span class="planet-face">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <circle cx="16" cy="16" r="11" fill="#3499CF"/>
+                  <path fill="#F7931E" d="M16 5a11 11 0 0 1 0 22 7 7 0 0 0 0-22z"/>
+                  <circle cx="16" cy="10.7" r="2.1" fill="#F7931E"/>
+                  <circle cx="16" cy="21.3" r="2.1" fill="#3499CF"/>
+                </svg>
+              </span>
+              <span class="planet-name">scikit-learn</span>
+            </div>
+
+            <div class="planet" data-speed="0.19" data-phase="4.1" data-dir="1">
+              <span class="planet-face">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="#FF6F00" d="M6 6h13v3.5h-4.8V26h-3.4V9.5H6z"/>
+                  <path fill="#FFA000" d="M14.6 6H26v3.5h-7.9v3.9h5.7v3.4h-5.7V26h-3.5z"/>
+                </svg>
+              </span>
+              <span class="planet-name">TensorFlow</span>
+            </div>
+
+            <div class="planet" data-speed="0.16" data-phase="1.1" data-dir="1">
+              <span class="planet-face">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="#4D77CF" d="M16 3l4.2 4.2L16 11.4 11.8 7.2z"/>
+                  <path fill="#4D77CF" d="M16 20.6l4.2 4.2L16 29l-4.2-4.2z"/>
+                  <path fill="#4DABCF" d="M6.8 11.8L11 16l-4.2 4.2L2.6 16z"/>
+                  <path fill="#4DABCF" d="M25.2 11.8L29.4 16l-4.2 4.2L21 16z"/>
+                </svg>
+              </span>
+              <span class="planet-name">NumPy</span>
+            </div>
+
+            <div class="planet" data-speed="0.13" data-phase="5.4" data-dir="-1">
+              <span class="planet-face">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <rect x="6"  y="6"  width="3" height="20" rx="1.3" fill="#130754"/>
+                  <rect x="11" y="11" width="3" height="15" rx="1.3" fill="#130754"/>
+                  <rect x="16" y="4"  width="3" height="13" rx="1.3" fill="#E70488"/>
+                  <rect x="16" y="19" width="3" height="7"  rx="1.3" fill="#130754"/>
+                  <rect x="21" y="6"  width="3" height="20" rx="1.3" fill="#130754"/>
+                  <rect x="26" y="11" width="3" height="15" rx="1.3" fill="#FFCA00"/>
+                </svg>
+              </span>
+              <span class="planet-name">pandas</span>
+            </div>
+
+            <div class="planet" data-speed="0.11" data-phase="3.0" data-dir="1">
+              <span class="planet-face">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <rect x="3" y="3" width="26" height="26" rx="5" fill="#0C4B33"/>
+                  <text x="16" y="22" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#ffffff">dj</text>
+                </svg>
+              </span>
+              <span class="planet-name">Django</span>
+            </div>
+          </div>
+
+          <ul class="tech-legend" aria-label="The stack, from the core outward">
+            <li><span class="dot" style="--c:#3776AB"></span>01 Python</li>
+            <li><span class="dot" style="--c:#F7931E"></span>02 scikit-learn</li>
+            <li><span class="dot" style="--c:#FF6F00"></span>03 TensorFlow</li>
+            <li><span class="dot" style="--c:#4DABCF"></span>04 NumPy</li>
+            <li><span class="dot" style="--c:#E70488"></span>05 pandas</li>
+            <li><span class="dot" style="--c:#44B78B"></span>06 Django</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <section class="strip" aria-label="Where we teach">
+      <div class="shell strip-row">
+        <span class="strip-label">Coding, brought to</span>
+        <span>After-school clubs</span>
+        <span>Public libraries</span>
+        <span>Title&nbsp;I schools</span>
+        <span>Remote learners</span>
+        <span>Volunteer-run</span>
+      </div>
+    </section>
+
+    <!-- ============ EXPLORE HUB ============ -->
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow"><span class="tick"></span>Where to next</p>
+          <h2>Chart your course.</h2>
+        </div>
+        <div class="hub">
+          <a href="programs.html" class="hub-card">
+            <span class="hub-no">Programs</span>
+            <h3>Three orbits, first line to first AI project</h3>
+            <p>A guided path from Python basics to building with machine learning — in 6–8 week crews.</p>
+            <span class="go">See the programs<span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+          <a href="about.html" class="hub-card">
+            <span class="hub-no">About</span>
+            <h3>A student-founded mission</h3>
+            <p>Why a middle schooler started $>SolarCoders<$ — and how we teach so it actually sticks.</p>
+            <span class="go">Our mission<span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+          <a href="stories.html" class="hub-card">
+            <span class="hub-no">Stories</span>
+            <h3>Voices from orbit</h3>
+            <p>What kids, parents, and teachers say after their first weeks writing real code.</p>
+            <span class="go">Read the stories<span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section" style="padding-top:0">
+      <div class="shell cta">
+        <p class="eyebrow"><span class="tick"></span>Enrollment open</p>
+        <h2 class="cta-title">Ready for liftoff?</h2>
+        <p class="section-lede">Crews are kept small so mentors can give every student real attention. Join the next orbit — or bring $>SolarCoders<$ to your school, library, or club.</p>
+        <div class="hero-cta center">
+          <a href="enroll.html" class="btn btn-solid" data-magnetic>Enroll a young coder</a>
+          <a href="contact.html" class="btn btn-ghost">Partner or volunteer<span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <p class="cta-fine">Free forever &middot; No experience needed &middot; Ages 8–14</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="colophon">
+    <div class="shell foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.5"/>
+            <circle cx="20" cy="20" r="4.5" fill="var(--star)"/>
+            <circle cx="35" cy="20" r="2.4" fill="var(--cool)"/>
+          </svg>
+          <span class="brand-word">$>SolarCoders<$</span>
+        </a>
+        <p>A student-founded nonprofit teaching kids Python &amp; AI. Learning to code should be for everyone.</p>
+      </div>
+      <nav aria-label="Explore">
+        <h4>Explore</h4>
+        <a href="programs.html">Programs</a>
+        <a href="about.html">About</a>
+        <a href="stories.html">Stories</a>
+      </nav>
+      <nav aria-label="Get involved">
+        <h4>Get involved</h4>
+        <a href="enroll.html">Enroll a kid</a>
+        <a href="contact.html">Volunteer as mentor</a>
+        <a href="contact.html">Partner with us</a>
+      </nav>
+      <nav aria-label="Connect">
+        <h4>Connect</h4>
+        <a href="contact.html">Contact us</a>
+        <a href="mailto:hello@$>SolarCoders<$.org">hello@$>SolarCoders<$.org</a>
+      </nav>
+    </div>
+    <div class="shell foot-base">
+      <p>&copy; <span id="year">2026</span> $>SolarCoders<$ — a 501(c)(3) nonprofit initiative.</p>
+      <p>Built by young coders, for young coders.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
